@@ -1,7 +1,6 @@
 export function loadFooter() {
-    return `
+  return `
     <footer role="contentinfo">
-        <p>© 2025 LifeSync. All rights reserved.</p>
         <nav>
             <ul>
                 <li><a href="privacy.html">Privacy Policy</a></li>
@@ -10,6 +9,7 @@ export function loadFooter() {
                 <li><a href="attribution.html">Attribution</a></li>
             </ul>
         </nav>
+        <p>© 2025 LifeSync. All rights reserved.</p>
     </footer>
     `;
 }

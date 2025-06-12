@@ -28,7 +28,10 @@
       property="og:image"
       content="https://lifesync.com/assets/images/lifesync-preview.jpg"
     />
-    <meta property="og:url" content="https://lifesync.com" />
+    <meta
+      property="og:url"
+      content="https://adamsoyama.github.io/lifesync/sync/"
+    />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card for Social Media -->
@@ -81,38 +84,45 @@
     <meta http-equiv="Content-Language" content="en" />
   </head>
   <body>
+    <div class="animated-circles">
+      <span class="circle pink"></span>
+      <span class="circle blue"></span>
+      <span class="circle yellow"></span>
+      <span class="circle green"></span>
+      <span class="circle purple"></span>
+    </div>
+
     <div id="header-container"></div>
 
     <main>
       <!-- Hero Section & Features -->
       <section id="hero" role="main">
         <div class="hero-content">
-          <div>
+          <div class="hero-text">
             <h1>LifeSync – Empowering Your Growth, One Insight at a Time</h1>
             <p>
               Enhance your well-being, manage finances, advance your career, and
               enjoy AI-powered entertainment—all in one place.
             </p>
-          </div>
-          <div class="navigation-arrow">
-            <a
-              href="authentication.html"
-              aria-label="Go to authentication page"
-            >
-              <img
-                src="assets/icons/arrow.png"
-                alt="Navigate to authentication"
-              />
-            </a>
+            <div class="navigation-arrow">
+              <a
+                href="authentication.html"
+                aria-label="Go to authentication page"
+              >
+                <img
+                  src="assets/icons/arrow.png"
+                  alt="Navigate to authentication"
+                />
+              </a>
+            </div>
           </div>
           <div class="hero-image">
             <img
-                src="https://drive.google.com/uc?export=view&id=1OmNFFiq89hMujz2ntp0eltFUErZx99Eh"
-                alt="LifeSync Hero Image"
-                loading="lazy"
-                width="100%"
-                style="max-width: 100%; height: auto;"
-                />
+              src="images/hero.webp"
+              alt="LifeSync Hero Image"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
@@ -134,7 +144,7 @@
           <h2>Finance Management</h2>
           <p>Stay on top of your expenses and investments seamlessly.</p>
           <div class="navigation-arrow">
-            <a href="fauthentication.html" aria-label="Go to Finance">
+            <a href="authentication.html" aria-label="Go to Finance">
               <img src="assets/icons/arrow.png" alt="Navigate to Finance" />
             </a>
           </div>
