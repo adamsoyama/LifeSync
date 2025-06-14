@@ -1,9 +1,14 @@
-// Import utilities for header and footer injection
-import * as utils from "./modules/utils.mjs";
+// Import utilities
+import {
+  injectHeader,
+  injectFooter,
+  setupMobileMenu,
+} from "./modules/utils.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
-  utils.loadHeader();
-  utils.loadFooter();
+  injectHeader();
+  injectFooter();
+  setupMobileMenu();
 });
 
 // Import the animateCircles function from utils module

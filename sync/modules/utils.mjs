@@ -1,10 +1,33 @@
 import { loadHeader } from "./header.mjs";
 import { loadFooter } from "./footer.mjs";
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("header-container").innerHTML = loadHeader();
-  document.getElementById("footer-container").innerHTML = loadFooter();
-});
+export function injectHeader() {
+  const headerContainer = document.getElementById("header-container");
+  if (headerContainer) {
+    headerContainer.innerHTML = loadHeader();
+  }
+}
+
+export function injectFooter() {
+  const footerContainer = document.getElementById("footer-container");
+  if (footerContainer) {
+    footerContainer.innerHTML = loadFooter();
+  }
+}
+
+export function setupMobileMenu() {
+  const toggleButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
+
+  if (toggleButton && nav) {
+    toggleButton.addEventListener("click", () => {
+      const expanded = toggleButton.getAttribute("aria-expanded") === "true";
+      toggleButton.setAttribute("aria-expanded", !expanded);
+      toggleButton.classList.toggle("open");
+      nav.classList.toggle("active");
+    });
+  }
+}
 
 export function animateCircles() {
   const circleContainer = document.querySelector(".animated-circles");
@@ -80,15 +103,17 @@ export function animateCircles() {
 
 // Function to handle parallax effect on hero section
 export function interactiveHero() {
-    const heroText = document.querySelector(".hero-text");
-    const heroImage = document.querySelector(".hero-image img");
+  const heroText = document.querySelector(".hero-text");
+  const heroImage = document.querySelector(".hero-image img");
 
-    document.addEventListener("mousemove", (event) => {
-        const xPos = (event.clientX / window.innerWidth - 0.5) * 30;
-        const yPos = (event.clientY / window.innerHeight - 0.5) * 30;
+  document.addEventListener("mousemove", (event) => {
+    const xPos = (event.clientX / window.innerWidth - 0.5) * 30;
+    const yPos = (event.clientY / window.innerHeight - 0.5) * 30;
 
-        // Apply movement effect
-        heroText.style.transform = `translate(${xPos * 0.3}px, ${yPos * 0.3}px)`;
-        heroImage.style.transform = `translate(${xPos * -0.4}px, ${yPos * -0.4}px) scale(1.03)`;
-    });
+    // Apply movement effect
+    heroText.style.transform = `translate(${xPos * 0.3}px, ${yPos * 0.3}px)`;
+    heroImage.style.transform = `translate(${xPos * -0.4}px, ${
+      yPos * -0.4
+    }px) scale(1.03)`;
+  });
 }

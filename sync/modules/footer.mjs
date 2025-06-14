@@ -9,6 +9,7 @@ export function loadFooter() {
                 <li><a href="attribution.html">Attribution</a></li>
             </ul>
         </nav>
+        <p>Desisgned & Developed by Modewani Group</p>
         <p>© 2025 LifeSync. All rights reserved.</p>
     </footer>
     `;
