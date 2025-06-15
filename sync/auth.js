@@ -1,5 +1,34 @@
+function protectDashboardPage() {
+  const user = sessionStorage.getItem("loggedInUser");
+  const onDashboard = window.location.pathname.includes("dashboard.html");
+
+  if (onDashboard && !user) {
+    const warning = document.createElement("div");
+    warning.textContent =
+      "You must be logged in to access this page. Redirecting...";
+    warning.style.position = "fixed";
+    warning.style.top = "20px";
+    warning.style.left = "50%";
+    warning.style.transform = "translateX(-50%)";
+    warning.style.backgroundColor = "#ff4d4d";
+    warning.style.color = "#fff";
+    warning.style.padding = "12px 24px";
+    warning.style.borderRadius = "8px";
+    warning.style.boxShadow = "0 4px 6px rgba(0,0,0,0.2)";
+    warning.style.zIndex = "9999";
+    document.body.appendChild(warning);
+
+    setTimeout(() => {
+      window.location.href = "authentication.html";
+    }, 2500);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   checkUserSession();
+  protectDashboardPage();
+  setupInactivityTimer();
+  animateCircles();
 });
 
 const signUpButton = document.getElementById("signUp");
@@ -14,7 +43,7 @@ signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
-// Validate email & password functions
+// ✅ Validate email & password functions
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -40,26 +69,26 @@ function showAlert(message, redirectTo = null) {
   }, 2000);
 }
 
-// Function to store user session
-function storeUserSession(email) {
-  localStorage.setItem("loggedInUser", email);
+// ✅ Store user session (full object for name access later)
+function storeUserSession(user) {
+  sessionStorage.setItem("loggedInUser", JSON.stringify(user));
 }
 
-// Function to check user session
+// ✅ Check if session exists and redirect
 function checkUserSession() {
-  const user = localStorage.getItem("loggedInUser");
+  const user = sessionStorage.getItem("loggedInUser");
   if (user) {
-    window.location.href = "dashboard.html"; // Redirect if user is already logged in
+    window.location.href = "dashboard.html";
   }
 }
 
-// Function to clear session (logout)
+// ✅ Logout function
 function logoutUser() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "authentication.html"; // Redirect to login page
+  sessionStorage.removeItem("loggedInUser");
+  window.location.href = "authentication.html";
 }
 
-// Registration Form Handling
+// ✅ Registration form handler
 document.getElementById("registerForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const name = document.getElementById("registerName").value.trim();
@@ -68,34 +97,70 @@ document.getElementById("registerForm").addEventListener("submit", (event) => {
 
   if (!name) return showAlert("Name is required.");
   if (!validateEmail(email)) return showAlert("Invalid email format.");
-  if (!validatePassword(password))
+  if (!validatePassword(password)) {
     return showAlert(
       "Password must be at least 8 characters, include a number, uppercase letter, and special character."
     );
+  }
 
-  storeUserSession(email); // Store user in browser
+  const users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+  const existing = users.find((u) => u.email === email);
+
+  if (existing) {
+    return showAlert("This email is already registered. Please log in.");
+  }
+
+  const newUser = { name, email, password };
+  users.push(newUser);
+  localStorage.setItem("registeredUsers", JSON.stringify(users));
+
+  storeUserSession(newUser);
   showAlert("Registration Successful! Redirecting...", "dashboard.html");
 });
 
-// Login Form Handling
+// ✅ Login form handler
 document.getElementById("loginForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const email = document.getElementById("loginEmail").value.trim();
   const password = document.getElementById("loginPassword").value.trim();
 
   if (!validateEmail(email)) return showAlert("Invalid email format.");
-  if (!validatePassword(password))
+  if (!validatePassword(password)) {
     return showAlert(
       "Password must be at least 8 characters, include a number, uppercase letter, and special character."
     );
+  }
 
-  storeUserSession(email); // Store user in browser
+  const users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+  const user = users.find((u) => u.email === email);
+
+  if (!user) return showAlert("No account found with this email.");
+  if (user.password !== password) return showAlert("Incorrect password.");
+
+  storeUserSession(user);
   showAlert("Login Successful! Redirecting...", "dashboard.html");
 });
 
-// Import the animateCircles function from utils module
-import { animateCircles } from "./modules/utils.mjs";
+// ✅ Inactivity logout mechanism
+let inactivityTimeout;
+function setupInactivityTimer() {
+  const maxInactivityTime = 10 * 60 * 1000; // 10 minutes
 
-document.addEventListener("DOMContentLoaded", () => {
-  animateCircles();
-});
+  const resetTimer = () => {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(() => {
+      sessionStorage.removeItem("loggedInUser");
+      alert("You have been logged out due to inactivity.");
+      window.location.href = "authentication.html";
+    }, maxInactivityTime);
+  };
+
+  ["mousemove", "keydown", "scroll", "click"].forEach((event) =>
+    document.addEventListener(event, resetTimer)
+  );
+
+  resetTimer(); // Initialize on load
+}
+
+// ✅ Import animateCircles
+import { animateCircles } from "./modules/utils.mjs";

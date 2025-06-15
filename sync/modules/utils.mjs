@@ -117,3 +117,37 @@ export function interactiveHero() {
     }px) scale(1.03)`;
   });
 }
+
+// 📌 Generate time-based greeting
+export function getGreeting() {
+  const hour = new Date().getHours();
+  if (hour < 12) return "Good morning";
+  if (hour < 18) return "Good afternoon";
+  return "Good evening";
+}
+
+// 📌 Fetch stored username from sessionStorage (correct source)
+export function getUserName() {
+  const userSession = sessionStorage.getItem("loggedInUser");
+  if (!userSession) return "Guest";
+
+  const user = JSON.parse(userSession);
+  return user.name ? user.name : "Guest"; // Correctly accesses stored name
+}
+
+// 📌 Generate full greeting dynamically
+export function generateGreeting() {
+  return `${getGreeting()}, ${getUserName()}!`;
+}
+
+// utils.mjs
+
+export function setupLogoutButton() {
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      sessionStorage.removeItem("loggedInUser");
+      window.location.href = "index.html"; // Redirect to landing/entry page
+    });
+  }
+}

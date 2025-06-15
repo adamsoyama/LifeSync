@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Character Encoding & Viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>LifeSync Dashboard</title>
+    <meta
+      name="description"
+      content="LifeSync helps you track mental health, manage finances, advance your career, and enjoy AI-powered entertainment—all in one place."
+    />
+    <meta
+      name="keywords"
+      content="mental health, finance, career, entertainment, AI-powered, self-improvement, personal growth"
+    />
+    <meta name="author" content="Adams Oyama" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph & Social Media Meta Tags -->
+    <meta property="og:title" content="LifeSync - Your Personal Growth Hub" />
+    <meta
+      property="og:description"
+      content="Track your mental health, manage finances, advance your career, and enjoy entertainment tailored for you."
+    />
+    <meta
+      property="og:image"
+      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://adamsoyama.github.io/lifesync/sync/"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LifeSync - Personal Growth Hub" />
+    <meta
+      name="twitter:description"
+      content="Your all-in-one tool for tracking personal growth, career insights, and entertainment recommendations."
+    />
+    <meta
+      name="twitter:image"
+      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+    />
+
+    <!-- Favicon & App Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/icons/favicons/site.webmanifest" />
+
+    <!-- Preloading Critical Resources -->
+    <link rel="preload" href="dashboard.css" as="style" />
+    <link rel="preload" href="dashboard.js" as="script" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Accessibility & Language Settings -->
+    <meta http-equiv="Content-Language" content="en" />
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="dashboard.js"></script>
+  </head>
+
+  <body>
+    <div class="animated-circles">
+      <span class="circle pink"></span>
+      <span class="circle blue"></span>
+      <span class="circle yellow"></span>
+      <span class="circle green"></span>
+      <span class="circle purple"></span>
+    </div>
+
+    <!-- Dynamic Header Injection -->
+    <div id="header-container"></div>
+
+    <main id="dashboard">
+      <!-- Greeting Section -->
+      <section class="greeting-section scroll-fade">
+        <h1 id="dynamic-greeting">Loading greeting...</h1>
+        <p>Welcome back to LifeSync! Here’s your snapshot for today.</p>
+      </section>
+
+      <!-- Dashboard Overview Grid -->
+      <section class="cards-grid">
+        <div class="dashboard-card mood-card hover-animate">
+          <h2>Mood Tracker</h2>
+          <canvas id="moodChart" aria-label="Mood statistics chart"></canvas>
+          <a href="mental_health.html" class="card-link">Open</a>
+        </div>
+
+        <div class="dashboard-card finance-card hover-animate">
+          <h2>Finance Overview</h2>
+          <div class="finance-numbers">
+            <p>Expenses: <span id="expenseTotal">$0.00</span></p>
+            <p>Investments: <span id="investmentTotal">$0.00</span></p>
+          </div>
+          <a href="finance.html" class="card-link">Open</a>
+        </div>
+
+        <div class="dashboard-card career-card hover-animate">
+          <h2>Career Progress</h2>
+          <ul id="careerHighlights">
+            <li>Fetching insights...</li>
+          </ul>
+          <a href="career.html" class="card-link">Open</a>
+        </div>
+
+        <div class="dashboard-card entertainment-card hover-animate">
+          <h2>Entertainment Picks</h2>
+          <div id="entertainmentSuggestion">
+            Loading your vibe-based show...
+          </div>
+          <a href="entertainment.html" class="card-link">Open</a>
+        </div>
+
+        <div class="dashboard-card community-card hover-animate">
+          <h2>Community Engagement</h2>
+          <p id="communityUpdates">Upcoming events and discussions...</p>
+          <a href="community.html" class="card-link">Open</a>
+        </div>
+      </section>
+
+      <!-- Achievements & Progress Section -->
+      <section class="achievement-section">
+        <h2>Your Achievements</h2>
+        <div class="progress-rings">
+          <div class="ring" id="moodProgress">
+            <p>Mood</p>
+          </div>
+          <div class="ring" id="financeProgress">
+            <p>Finance</p>
+          </div>
+          <div class="ring" id="careerProgress">
+            <p>Career</p>
+          </div>
+        </div>
+        <div class="badge-popups" id="badgeDisplay">
+          Earned badges will appear here!
+        </div>
+      </section>
+      <div class="logout-container">
+        <button id="logoutBtn">Log Out</button>
+      </div>
+    </main>
+
+    <!-- Dynamic Footer Injection -->
+    <div id="footer-container"></div>
+  </body>
+</html>
