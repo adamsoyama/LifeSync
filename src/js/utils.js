@@ -1,5 +1,5 @@
-import { loadHeader } from "./header.mjs";
-import { loadFooter } from "./footer.mjs";
+import { loadHeader } from "./header.js";
+import { loadFooter } from "./footer.js";
 
 export function injectHeader() {
   const headerContainer = document.getElementById("header-container");

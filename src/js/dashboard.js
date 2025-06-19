@@ -6,7 +6,7 @@ import {
   animateCircles,
   generateGreeting,
   setupLogoutButton,
-} from "./utils.mjs";
+} from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   injectHeader();

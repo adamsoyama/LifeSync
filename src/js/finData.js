@@ -1,4 +1,4 @@
-import { fetchData, CURRENCY_API_KEY, TWELVE_DATA_API_KEY } from "./api.js";
+import { fetchData, CURRENCY_LAYER_KEY, TWELVE_DATA_API_KEY } from "./api.js";
 
 const FIXER_API_URL = "https://api.apilayer.com/fixer/latest";
 const TWELVE_DATA_API_URL = "https://api.twelvedata.com/time_series";
@@ -7,7 +7,7 @@ const TWELVE_DATA_API_URL = "https://api.twelvedata.com/time_series";
 export async function getExchangeRate(targetCurrency) {
   const url = `${FIXER_API_URL}?base=USD&symbols=${targetCurrency}`;
   const headers = {
-    apikey: CURRENCY_API_KEY, // 🔐 From Vite .env
+    apikey: CURRENCY_LAYER_KEY, // 🔐 From Vite .env
   };
 
   const data = await fetchData(url, { headers });

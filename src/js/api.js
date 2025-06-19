@@ -16,5 +16,5 @@ export async function fetchData(url, options = {}) {
 }
 
 // 🔐 API Keys pulled from Vite environment
-export const CURRENCY_API_KEY = import.meta.env.VITE_CURRENCY_API_KEY;
+export const CURRENCY_LAYER_KEY = import.meta.env.VITE_CURRENCY_LAYER_KEY;
 export const TWELVE_DATA_API_KEY = import.meta.env.VITE_TWELVE_DATA_API_KEY;

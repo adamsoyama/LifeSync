@@ -1,5 +1,5 @@
-import { loadHeader } from "./pageHeader.mjs";
-import { loadFooter } from "./pageFooter.mjs";
+import { loadHeader } from "./pageHeader.js";
+import { loadFooter } from "./pageFooter.js";
 
 export function injectHeader() {
   const headerContainer = document.getElementById("header-container");

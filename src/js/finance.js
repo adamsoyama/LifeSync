@@ -1,6 +1,6 @@
 // 🌟 Import Modules
 import { getExchangeRate, getStockData } from "./finData.js";
-import { injectHeader, injectFooter, animateCircles } from "./services.mjs";
+import { injectHeader, injectFooter, animateCircles } from "./services.js";
 
 // 🌍 DOM Elements
 const totalIncomeDisplay = document.getElementById("total-income");

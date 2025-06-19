@@ -80,7 +80,7 @@ function storeUserSession(user) {
 function checkUserSession() {
   const user = sessionStorage.getItem("loggedInUser");
   if (user) {
-    window.location.href = "./pages/dashboard.html";
+    window.location.href = "./dashboard.html";
   }
 }
 
@@ -165,4 +165,4 @@ function setupInactivityTimer() {
 }
 
 // ✅ Import animateCircles
-import { animateCircles } from "./utils.mjs";
+import { animateCircles } from "./utils.js";
