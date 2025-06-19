@@ -64,3 +64,23 @@ document.addEventListener("DOMContentLoaded", () => {
     journalDropdown.appendChild(option);
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const summary = JSON.parse(localStorage.getItem("financeSummary"));
+
+  if (summary) {
+    document.getElementById("dash-income").innerText = summary.income || "₦0";
+    document.getElementById("dash-expenses").innerText =
+      summary.expenses || "₦0";
+    document.getElementById("dash-balance").innerText = summary.balance || "₦0";
+    document.getElementById("dash-exchange").innerText =
+      summary.exchangeRate || "N/A";
+    document.getElementById("dash-stock").innerText =
+      summary.stockPrice || "N/A";
+    document.getElementById("dash-updated").innerText =
+      new Date(summary.timestamp).toLocaleString() || "N/A";
+  } else {
+    document.getElementById("finance-summary").innerHTML +=
+      "<p>No financial data available yet. Visit the Finance page to get started.</p>";
+  }
+});

@@ -28,10 +28,7 @@
       property="og:image"
       content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
     />
-    <meta
-      property="og:url"
-      content="https://adamsoyama.github.io/lifesync/sync/"
-    />
+    <meta property="og:url" content="https://adamsoyama.github.io/lifesync" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card for Social Media -->
@@ -43,7 +40,7 @@
     />
     <meta
       name="twitter:image"
-      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+      content="adamsoyama.github.io/lifesync/public/images/hero.webp"
     />
 
     <!-- Favicon & App Icons -->
@@ -56,32 +53,35 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../../assets/icons/favicons/favicon-32x32.png"
+      href="../../public/assets/icons/favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../../assets/icons/favicons/favicon-16x16.png"
+      href="../../public/assets/icons/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="../../assets/icons/favicons/site.webmanifest" />
+    <link
+      rel="manifest"
+      href="../../public/assets/icons/favicons/site.webmanifest"
+    />
 
     <!-- Preloading Critical Resources -->
-    <link rel="preload" href="finance.css" as="style" />
-    <link rel="preload" href="finance.js" as="script" />
+    <link rel="preload" href="../css/finance.css" as="style" />
+    <link rel="preload" href="../js/finance.js" as="script" />
 
     <!-- Stylesheets -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="finance.css" />
+    <link rel="stylesheet" href="../css/finance.css" />
 
     <!-- Accessibility & Language Settings -->
     <meta http-equiv="Content-Language" content="en" />
 
     <!-- JavaScript Modules -->
-    <script type="module" src="finance.js"></script>
+    <script type="module" src="../js/finance.js"></script>
   </head>
   <body>
     <div class="animated-circles">
@@ -110,6 +110,7 @@
             <span id="current-balance">₦0</span>
           </p>
         </div>
+        <div class="transaction-controls"></div>
       </section>
 
       <!-- 🔹 Currency Exchange (Fixer API) -->

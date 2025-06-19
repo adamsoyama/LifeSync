@@ -4,13 +4,13 @@ import {
   startBreathingExercise,
   loadTherapySuggestions,
   getCurrentMoodSummary,
-} from "./modules/moodTracker.mjs";
+} from "./moodTracker.mjs";
 
 import {
   injectHeader,
   injectFooter,
   animateCircles,
-} from "../mentalhealth/modules/services.mjs";
+} from "./services.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {
   injectHeader();
@@ -66,7 +66,7 @@ document.getElementById("return-to-dashboard").addEventListener("click", () => {
   if (result) {
     sessionStorage.setItem("dashboardMood", JSON.stringify(result));
   }
-  window.location.href = "../../dashboard.html";
+  window.location.href = "../../src/pages/dashboard.html";
 });
 
 function toggleSections(enabled) {

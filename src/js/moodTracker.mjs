@@ -1,4 +1,4 @@
-import { fetchData } from "../../api.mjs";
+import { fetchData } from "./api.js";
 
 // 🌐 API Endpoints
 const MOOD_API_URL =
