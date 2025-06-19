@@ -178,7 +178,7 @@ saveBudgetBtn.addEventListener("click", handleBudgetSave);
 addIncomeBtn.addEventListener("click", () => promptTransaction("income"));
 addExpenseBtn.addEventListener("click", () => promptTransaction("expense"));
 returnDashboardBtn.addEventListener("click", () => {
-  window.location.href = "/src/pages/dashboard.html";
+  window.location.href = "/lifesync/src/pages/dashboard.html";
 });
 
 // 🏁 Load Page Data
