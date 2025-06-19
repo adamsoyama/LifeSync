@@ -4,7 +4,7 @@ export function loadHeader() {
   <header role="navigation">
     <div>
         <a href="index.html">
-        <img src="assets/icons/logo/complete_logo1.png" alt="LifeSync Logo">
+        <img src="public/assets/icons/logo/complete_logo1.png" alt="LifeSync Logo">
         </a>
         <!-- Menu Toggle Button -->
         <button
@@ -19,11 +19,11 @@ export function loadHeader() {
 
         <nav class="main-nav" arial label="Main Navigation">
             <ul>
-                <li><a href="authentication.html">Mental Health</a></li>
-                <li><a href="authentication.html">Finance</a></li>
-                <li><a href="authentication.html">Career</a></li>
-                <li><a href="authentication.html">Entertainment</a></li>
-                <li><a href="authentication.html">Community</a></li>
+                <li><a href="src/pages/authentication.html">Mental Health</a></li>
+                <li><a href="src/pages/authentication.html">Finance</a></li>
+                <li><a href="src/pages/authentication.html">Career</a></li>
+                <li><a href="src/pages/authentication.html">Entertainment</a></li>
+                <li><a href="src/pages/authentication.html">Community</a></li>
             </ul>
         </nav>
      </div>

@@ -6,7 +6,7 @@ import {
   animateCircles,
   generateGreeting,
   setupLogoutButton,
-} from "./modules/utils.mjs";
+} from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   injectHeader();
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const user = sessionStorage.getItem("loggedInUser");
   if (!user) {
     // No active session, redirect to login
-    window.location.href = "authentication.html";
+    window.location.href = "../pages/authentication.html";
   }
 });
 

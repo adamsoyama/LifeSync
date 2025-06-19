@@ -147,7 +147,7 @@ export function setupLogoutButton() {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
       sessionStorage.removeItem("loggedInUser");
-      window.location.href = "index.html"; // Redirect to landing/entry page
+      window.location.href = "./../../index.html"; // Redirect to landing/entry page
     });
   }
 }

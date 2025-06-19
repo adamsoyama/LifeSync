@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Character Encoding & Viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>LifeSync - Finance</title>
+    <meta
+      name="description"
+      content="LifeSync helps you track mental health, manage finances, advance your career, and enjoy AI-powered entertainment—all in one place."
+    />
+    <meta
+      name="keywords"
+      content="mental health, finance, career, entertainment, AI-powered, self-improvement, personal growth"
+    />
+    <meta name="author" content="Adams Oyama" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (OG) Meta Tags for Social Sharing -->
+    <meta property="og:title" content="LifeSync - Your Personal Growth Hub" />
+    <meta
+      property="og:description"
+      content="Track your mental health, manage finances, advance your career, and enjoy entertainment tailored for you."
+    />
+    <meta
+      property="og:image"
+      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://adamsoyama.github.io/lifesync/sync/"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card for Social Media -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LifeSync - Personal Growth Hub" />
+    <meta
+      name="twitter:description"
+      content="Your all-in-one tool for tracking personal growth, career insights, and entertainment recommendations."
+    />
+    <meta
+      name="twitter:image"
+      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+    />
+
+    <!-- Favicon & App Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/icons/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/icons/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/icons/favicons/site.webmanifest" />
+
+    <!-- Preloading Critical Resources -->
+    <link rel="preload" href="finance.css" as="style" />
+    <link rel="preload" href="finance.js" as="script" />
+
+    <!-- Stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="finance.css" />
+
+    <!-- Accessibility & Language Settings -->
+    <meta http-equiv="Content-Language" content="en" />
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="finance.js"></script>
+  </head>
+  <body>
+    <div class="animated-circles">
+      <span class="circle pink"></span>
+      <span class="circle blue"></span>
+      <span class="circle yellow"></span>
+      <span class="circle green"></span>
+      <span class="circle purple"></span>
+    </div>
+
+    <div id="header-container"></div>
+
+    <main id="finance-main">
+      <!-- 🔹 Financial Overview -->
+      <section class="finance-overview">
+        <h2>Financial Overview</h2>
+        <div class="summary-box">
+          <p>
+            <strong>Total Income:</strong> <span id="total-income">₦0</span>
+          </p>
+          <p>
+            <strong>Total Expenses:</strong> <span id="total-expenses">₦0</span>
+          </p>
+          <p>
+            <strong>Current Balance:</strong>
+            <span id="current-balance">₦0</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- 🔹 Currency Exchange (Fixer API) -->
+      <section class="currency-exchange">
+        <h2>Currency Exchange</h2>
+        <label for="usd-amount">Enter Amount in USD:</label>
+        <input type="number" id="usd-amount" placeholder="e.g., 100" />
+
+        <label for="currency-select">Convert USD to:</label>
+        <select id="currency-select">
+          <option value="EUR">EUR - Euro</option>
+          <option value="GBP">GBP - British Pound</option>
+        </select>
+        <button id="convert-currency">Convert</button>
+
+        <p>
+          <strong>Exchange Rate:</strong>
+          <span id="exchange-rate">Loading...</span>
+        </p>
+        <p>
+          <strong>Converted Amount:</strong>
+          <span id="converted-amount">$0</span>
+        </p>
+      </section>
+
+      <!-- 🔹 Budget Planner -->
+      <section class="budget-planner">
+        <h2>Budget Planner</h2>
+        <label for="monthly-budget">Set Monthly Budget:</label>
+        <input type="number" id="monthly-budget" placeholder="Enter amount" />
+        <button id="save-budget">Save Budget</button>
+      </section>
+
+      <!-- 🔹 Stock Market Insights (MarketStack API) -->
+      <section class="stock-insights">
+        <h2>Stock Market Insights</h2>
+        <label for="stock-symbol">Enter Ticker Symbol:</label>
+        <input type="text" id="stock-symbol" placeholder="e.g., AAPL" />
+        <button id="fetch-stock">Fetch Data</button>
+        <div class="stock-data">
+          <p>
+            <strong>Current Price:</strong>
+            <span id="stock-price">Loading...</span>
+          </p>
+          <p>
+            <strong>Market Cap:</strong> <span id="market-cap">Loading...</span>
+          </p>
+          <p><strong>Historical Trends:</strong></p>
+          <ul id="stock-history"></ul>
+        </div>
+      </section>
+
+      <!-- 🔹 Financial Health Score -->
+      <section class="financial-score">
+        <h2>Financial Health Score</h2>
+        <div id="health-score">Analyzing...</div>
+      </section>
+
+      <!-- 🔹 Transaction History -->
+      <section class="transaction-history">
+        <h2>Transaction History</h2>
+        <input
+          type="search"
+          id="transaction-search"
+          placeholder="Search transactions"
+        />
+        <div id="transaction-list">No records found.</div>
+      </section>
+
+      <!-- 🔹 Sync to Dashboard -->
+      <button id="return-dashboard">Return to Dashboard</button>
+    </main>
+
+    <div id="footer-container"></div>
+  </body>
+</html>

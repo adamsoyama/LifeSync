@@ -1,6 +1,8 @@
 function protectDashboardPage() {
   const user = sessionStorage.getItem("loggedInUser");
-  const onDashboard = window.location.pathname.includes("dashboard.html");
+  const onDashboard = window.location.pathname.includes(
+    "./pages/dashboard.html"
+  );
 
   if (onDashboard && !user) {
     const warning = document.createElement("div");
@@ -19,7 +21,7 @@ function protectDashboardPage() {
     document.body.appendChild(warning);
 
     setTimeout(() => {
-      window.location.href = "authentication.html";
+      window.location.href = "./pages/authentication.html";
     }, 2500);
   }
 }
@@ -78,14 +80,14 @@ function storeUserSession(user) {
 function checkUserSession() {
   const user = sessionStorage.getItem("loggedInUser");
   if (user) {
-    window.location.href = "dashboard.html";
+    window.location.href = "./pages/dashboard.html";
   }
 }
 
 // ✅ Logout function
 function logoutUser() {
   sessionStorage.removeItem("loggedInUser");
-  window.location.href = "authentication.html";
+  window.location.href = "./pages/authentication.html";
 }
 
 // ✅ Registration form handler
@@ -151,7 +153,7 @@ function setupInactivityTimer() {
     inactivityTimeout = setTimeout(() => {
       sessionStorage.removeItem("loggedInUser");
       alert("You have been logged out due to inactivity.");
-      window.location.href = "authentication.html";
+      window.location.href = "./pages/authentication.html";
     }, maxInactivityTime);
   };
 
@@ -163,4 +165,4 @@ function setupInactivityTimer() {
 }
 
 // ✅ Import animateCircles
-import { animateCircles } from "./modules/utils.mjs";
+import { animateCircles } from "./utils.mjs";

@@ -3,7 +3,7 @@ import {
   injectHeader,
   injectFooter,
   setupMobileMenu,
-} from "./modules/utils.mjs";
+} from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   injectHeader();
@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Import the animateCircles function from utils module
-import { animateCircles } from "./modules/utils.mjs";
+import { animateCircles } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   animateCircles();
 });
 
-import { interactiveHero } from "./modules/utils.mjs";
+import { interactiveHero } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   interactiveHero();

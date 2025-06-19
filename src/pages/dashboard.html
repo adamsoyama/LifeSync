@@ -18,7 +18,7 @@
     <meta name="author" content="Adams Oyama" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph & Social Media Meta Tags -->
+    <!-- Open Graph (OG) Meta Tags for Social Sharing -->
     <meta property="og:title" content="LifeSync - Your Personal Growth Hub" />
     <meta
       property="og:description"
@@ -26,13 +26,12 @@
     />
     <meta
       property="og:image"
-      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+      content="adamsoyama.github.io/lifesync/public/images/hero.webp"
     />
-    <meta
-      property="og:url"
-      content="https://adamsoyama.github.io/lifesync/sync/"
-    />
+    <meta property="og:url" content="https://adamsoyama.github.io/lifesync" />
     <meta property="og:type" content="website" />
+
+    <!-- Twitter Card for Social Media -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="LifeSync - Personal Growth Hub" />
     <meta
@@ -41,30 +40,35 @@
     />
     <meta
       name="twitter:image"
-      content="adamsoyama.github.io/lifesync/sync/images/hero.webp"
+      content="adamsoyama.github.io/lifesync/public/images/hero.webp"
     />
 
     <!-- Favicon & App Icons -->
     <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="public/assets/icons/favicons/apple-touch-icon.png"
+    />
+    <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/icons/favicons/favicon-32x32.png"
+      href="public/assets/icons/favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/icons/favicons/favicon-16x16.png"
+      href="public/assets/icons/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/icons/favicons/site.webmanifest" />
+    <link rel="manifest" href="public/assets/icons/favicons/site.webmanifest" />
 
     <!-- Preloading Critical Resources -->
-    <link rel="preload" href="dashboard.css" as="style" />
-    <link rel="preload" href="dashboard.js" as="script" />
+    <link rel="preload" href="../css/dashboard.css" as="style" />
+    <link rel="preload" href="../css/dashboard" as="script" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
@@ -74,7 +78,7 @@
     <meta http-equiv="Content-Language" content="en" />
 
     <!-- JavaScript Modules -->
-    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
   </head>
 
   <body>
@@ -85,9 +89,6 @@
       <span class="circle green"></span>
       <span class="circle purple"></span>
     </div>
-
-    <!-- Dynamic Header Injection -->
-    <div id="header-container"></div>
 
     <main id="dashboard">
       <!-- Greeting Section -->
@@ -102,9 +103,7 @@
           <h2>Your Mood Summary</h2>
           <p id="mood-summary-text">Loading mood summary...</p>
           <canvas id="moodChart" aria-label="Mood statistics chart"></canvas>
-          <a href="pages/mentalhealth/mental_health.html" class="card-link"
-            >Open</a
-          >
+          <a href="../pages/mental_health.html" class="card-link">Open</a>
         </div>
 
         <div class="dashboard-card finance-card hover-animate">
@@ -113,7 +112,7 @@
             <p>Expenses: <span id="expenseTotal">$0.00</span></p>
             <p>Investments: <span id="investmentTotal">$0.00</span></p>
           </div>
-          <a href="finance.html" class="card-link">Open</a>
+          <a href="../pages/finance.html" class="card-link">Open</a>
         </div>
 
         <div class="dashboard-card career-card hover-animate">
@@ -121,7 +120,7 @@
           <ul id="careerHighlights">
             <li>Fetching insights...</li>
           </ul>
-          <a href="career.html" class="card-link">Open</a>
+          <a href="../pages/career.html" class="card-link">Open</a>
         </div>
 
         <div class="dashboard-card entertainment-card hover-animate">
@@ -129,13 +128,13 @@
           <div id="entertainmentSuggestion">
             Loading your vibe-based show...
           </div>
-          <a href="entertainment.html" class="card-link">Open</a>
+          <a href="../pages/entertainment.html" class="card-link">Open</a>
         </div>
 
         <div class="dashboard-card community-card hover-animate">
           <h2>Community Engagement</h2>
           <p id="communityUpdates">Upcoming events and discussions...</p>
-          <a href="community.html" class="card-link">Open</a>
+          <a href="../pages/community.html" class="card-link">Open</a>
         </div>
       </section>
 
@@ -161,8 +160,5 @@
         <button id="logoutBtn">Log Out</button>
       </div>
     </main>
-
-    <!-- Dynamic Footer Injection -->
-    <div id="footer-container"></div>
   </body>
 </html>
