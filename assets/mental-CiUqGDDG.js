@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill-B5Qt9EMX.js";import{f as d,i as g,a as p,b as y}from"./services-DSB0CCEI.js";const f="https://run.mocky.io/v3/e1aae645-3b1a-4f1f-a466-fae8028269a1",h="https://run.mocky.io/v3/c3d1e92d-41e5-422f-8c7f-d378b7ca0774";async function S(){const e=await d(f),t=(e==null?void 0:e.questions)||[];if(t.length>0){sessionStorage.setItem("moodQuestions",JSON.stringify(t));const o=document.getElementById("mood-question-container");o.innerHTML=t.map((n,i)=>`
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{f as d,i as g,a as p,b as y}from"./services-w6WyPBlA.js";const f="https://run.mocky.io/v3/e1aae645-3b1a-4f1f-a466-fae8028269a1",h="https://run.mocky.io/v3/c3d1e92d-41e5-422f-8c7f-d378b7ca0774";async function S(){const e=await d(f),t=(e==null?void 0:e.questions)||[];if(t.length>0){sessionStorage.setItem("moodQuestions",JSON.stringify(t));const o=document.getElementById("mood-question-container");o.innerHTML=t.map((n,i)=>`
         <div class="question-block">
           <p>${i+1}. ${n.text}</p>
           <div class="scale-options">

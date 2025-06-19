@@ -76,10 +76,10 @@
     <meta http-equiv="Content-Language" content="en" />
 
     <!-- JavaScript Modules -->
-    <script type="module" crossorigin src="/lifesync/assets/dashboard-DzzFfgSE.js"></script>
-    <link rel="modulepreload" crossorigin href="/lifesync/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="/lifesync/assets/utils-BV7AsqTe.js">
-    <link rel="stylesheet" crossorigin href="/lifesync/assets/dashboard-B7DtG-rb.css">
+    <script type="module" crossorigin src="/assets/dashboard-ReXxRPh7.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-BV7AsqTe.js">
+    <link rel="stylesheet" crossorigin href="/assets/dashboard-B7DtG-rb.css">
   </head>
 
   <body>
@@ -107,11 +107,33 @@
           <a href="../pages/mental_health.html" class="card-link">Open</a>
         </div>
 
-        <div class="dashboard-card finance-card hover-animate">
-          <h2>Finance Overview</h2>
+        <div id="finance-summary" class="dashboard-card">
+          <h2>Finance Summary</h2>
           <div class="finance-numbers">
-            <p>Expenses: <span id="expenseTotal">$0.00</span></p>
-            <p>Investments: <span id="investmentTotal">$0.00</span></p>
+            <p>
+              <strong>Total Income:</strong>
+              <span id="dash-income">Loading...</span>
+            </p>
+            <p>
+              <strong>Total Expenses:</strong>
+              <span id="dash-expenses">Loading...</span>
+            </p>
+            <p>
+              <strong>Balance:</strong>
+              <span id="dash-balance">Loading...</span>
+            </p>
+            <p>
+              <strong>Latest Exchange Rate:</strong>
+              <span id="dash-exchange">Loading...</span>
+            </p>
+            <p>
+              <strong>Last Stock Price:</strong>
+              <span id="dash-stock">Loading...</span>
+            </p>
+            <p>
+              <strong>Last Updated:</strong>
+              <span id="dash-updated">Loading...</span>
+            </p>
           </div>
           <a href="../pages/finance.html" class="card-link">Open</a>
         </div>
