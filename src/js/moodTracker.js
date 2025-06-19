@@ -2,9 +2,9 @@ import { fetchData } from "./api.js";
 
 // 🌐 API Endpoints
 const MOOD_API_URL =
-  "https://run.mocky.io/v3/e1aae645-3b1a-4f1f-a466-fae8028269a1";
+  "https://mocki.io/v1/c079619d-45d3-4c25-ad97-080f1d1c9f5e";
 const THERAPY_API_URL =
-  "https://run.mocky.io/v3/c3d1e92d-41e5-422f-8c7f-d378b7ca0774";
+  "https://mocki.io/v1/8593eb64-5d6b-4500-bb06-ba8ee819f239";
 
 ///////////////////////
 // MOOD TRACKING
